@@ -1,10 +1,11 @@
 from PIL import Image
 
+output_path = "./output_data/"
 def decode(nft_file):
   print("decoding")
   out_file ="rec-" + ".".join(nft_file.split(".")[:-1]) 
-  with open(out_file, "wb") as f:
-    im = Image.open(nft_file)
+  with open(output_path + out_file, "wb") as f:
+    im = Image.open(output_path + nft_file)
     num_cols = im.size[0]
     data = im.getdata()
     databytes = bytes(data)

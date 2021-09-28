@@ -3,11 +3,12 @@ import math
 from PIL import Image
 import time
 
+input_path = "./input_data/"
+output_path = "./output_data/"
 
 def encode(input_file):
-  tmp_file = input_file + ".png"
   t1 = time.time()
-  with open(input_file, "rb") as f:
+  with open(input_path + input_file, "rb") as f:
       data = f.read()
   arr = np.zeros((math.ceil(len(data)**0.5)**2 + (math.ceil(len(data)**0.5)), 1), dtype=np.uint8)
   size_bytes = getByteSize(len(data))
@@ -24,6 +25,7 @@ def encode(input_file):
   arr = arr.reshape(math.ceil(len(data)**0.5) + 1, math.ceil(len(data)**0.5))
   im = Image.fromarray(np.uint8(arr), 'L')
   print("Writing file to image")
+  tmp_file = output_path + input_file + ".png"
   im.save(tmp_file)
   print("time elapsed: {}".format(time.time() - t1))
 
