@@ -1,7 +1,7 @@
 import decode
 import encode
 
-input_file = "height_crop.mp4"
+input_file = "bitcoin-22.0.tar.gz"
 encode.encode(input_file)
 decode.decode(input_file + ".png")
 
