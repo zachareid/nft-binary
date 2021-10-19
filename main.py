@@ -1,9 +1,9 @@
 import decode
 import encode
 
-input_file = "bitcoin-22.0.tar.gz"
-encode.encode(input_file)
-decode.decode(input_file + ".png")
+input_file = "bible.txt"
+encode.encodeGrayscale(input_file)
+decode.decodeGrayscale(input_file + ".png")
 
 
 
