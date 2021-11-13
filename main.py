@@ -2,8 +2,8 @@ import decode
 import encode
 
 input_file = "bible.txt"
-encode.encodeGrayscale(input_file)
-decode.decodeGrayscale(input_file + ".png")
+encode.encodeRGB(input_file)
+decode.decodeRGB(input_file + ".png")
 
 
 
